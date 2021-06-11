@@ -62,7 +62,7 @@
 
   }
 $: {
-    if (site && metafields) {
+    if (site && metafields.length > 0) {
         url = `${site.replace(/\/$/, "")}/admin/bulk?resource_name=${resource}&edit=${generateMetafields()}`;
         disabled = false;
     } else {
@@ -111,7 +111,7 @@ $: {
 
                       <h5 style="margin-top: 1rem">Metafields</h5>
                       <p>Add here the custom meta fields you wish to be able to manage.</p>
-                      {#if metafields}
+                      {#if metafields.length > 0}
                           <DataTable  {headers} rows={metafields}>
                             <span slot="cell" let:cell let:row>
                                 {#if cell.key === 'overflow'}

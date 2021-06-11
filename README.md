@@ -1,19 +1,27 @@
-# Svelte Example
+# Generate Shopify Metafields Editor Link
 
-This directory is a brief example of a [Svelte](https://svelte.dev/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
+This repo generates a link needed to access custom metafields for products in your Shopify Store without the need for a plugin or app.
 
-## Deploy Your Own
+## Use locally
 
-Deploy your own Svelte project, along with Serverless Functions, with Vercel.
+Simply clone the repo, install dependencies `yarn` or `npm install` and run the dev server `yarn dev` or `npm run dev`.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/main/examples/svelte)
+_Live Example: https://shopify-metafields-editor-link.vercel.app_
 
-_Live Example: https://svelte.now-examples.now.sh_
+### How to use?
 
-### How We Created This Example
-
-To get started with Svelte, along with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction), deployed with Vercel, you can use [degit](https://github.com/Rich-Harris/degit) to initialize the project:
+After you have added your custom metafields, you can simply include them in your theme code in liquid as following:
 
 ```shell
-$ npx degit sveltejs/template my-svelte-project
+{{ product.metafields.global.field_name }}
 ```
+
+This solution has a few limitations, as you are limited to only using global metafields, and you can't nest metafield objects.
+
+This tool is public repo available at https://github.com/imCorfitz/shopify-metafields-editor-link
+
+### Why?
+
+Was watching "Code with Chris" and his video on [Custom Fields in Shopify](https://www.youtube.com/watch?v=UbwhADWZzvQ), and thought it would be good to have such tool available to simplify access to metafields in the Shopify Admin.
+
+#### Have fun! 🤓 🥃
